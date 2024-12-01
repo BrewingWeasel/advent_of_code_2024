@@ -22,14 +22,15 @@ fn generic_parsing(input: String) -> #(List(Int), List(Int)) {
   #(parse(left), parse(right))
 }
 
-pub fn part1(input: String) -> Int {
+pub fn part1(input: String) -> String {
   let #(left, right) = generic_parsing(input)
 
   list.zip(list.sort(left, int.compare), list.sort(right, int.compare))
   |> list.fold(0, fn(acc, x) { acc + int.absolute_value(x.0 - x.1) })
+  |> int.to_string()
 }
 
-pub fn part2(input: String) -> Int {
+pub fn part2(input: String) -> String {
   let #(left, right) = generic_parsing(input)
 
   left
@@ -38,4 +39,5 @@ pub fn part2(input: String) -> Int {
     count_in_right * x
   })
   |> int.sum()
+  |> int.to_string()
 }
