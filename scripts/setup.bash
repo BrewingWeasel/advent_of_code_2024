@@ -5,7 +5,7 @@ if [ "$#" -ne 1 ]; then
   exit 1
 fi
 
-year=2023
+year=2024
 day=$1
 echo "Setting up Day $day"
 
