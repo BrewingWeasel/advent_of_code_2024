@@ -1,11 +1,12 @@
 import day1
 import day2
+import day3
 import gleam/int
 import gleam/io
 import gleam_community/ansi
 import simplifile
 
-const current_day = 2
+const current_day = 3
 
 pub fn main() {
   case current_day {
@@ -25,6 +26,7 @@ pub fn main() {
         expected_sample1: "2",
         expected_sample2: "4",
       )
+    3 -> handle_day(current_day, day3.part1, day3.part2, expected_sample1: "161", expected_sample2: "") 
     _ -> panic as "Day not implemented"
   }
 }
